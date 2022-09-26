@@ -29,7 +29,6 @@ with open('books.csv', 'r', encoding = 'cp1251') as f:
         rowToLower = row[3].lower()
         index = rowToLower.find(search.lower())
         if (index != -1) and (int(row[6][:4]) >= 2018):
-            print(int(row[6][:4]))
             flag = 1
             print('Название книги: ', row[1])
             file.write('Название: ' + row[1] + ' Артикул: ' + row[0] + '\n')
@@ -48,5 +47,10 @@ with open('books.csv', newline = '') as f:
     reader_list = list(reader)
     for i in numbers:
         row = reader_list[i]
-        print(row[3], '.', row[1], '-', row[6][:4])
+        print('Рандомные книги:', row[3], '.', row[1], '-', row[6][:4])
+file.close()
+
+
+
+
 
